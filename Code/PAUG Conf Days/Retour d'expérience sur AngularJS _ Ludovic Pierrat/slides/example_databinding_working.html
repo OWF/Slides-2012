@@ -1,0 +1,27 @@
+<html ng-app>
+<link href='style.css' rel='stylesheet' type='text/css'>
+<script src='lib/jquery-1.8.2.min.js'></script>
+<script src='lib/angular-1.1.0.min.js'></script>
+<style>
+    body {
+        background-color:#fff;
+    }
+    input {
+        font-size:20px;
+    }
+</style>
+<script>
+    'use strict';
+
+function AppController($scope) {
+    
+    $scope.name = "à vous";
+    
+
+}
+</script>
+<body ng-controller='AppController'>
+  <input ng-model="name" type="text" placeholder="nom"/>
+  <p>Bienvenue {{name}} !</p>
+</body>
+</html>

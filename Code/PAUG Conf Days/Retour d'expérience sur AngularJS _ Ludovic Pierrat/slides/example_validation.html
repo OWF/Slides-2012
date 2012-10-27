@@ -1,0 +1,4 @@
+    <form ng-submit="addTodo()" name="taskform" novalidate>
+        <input type="text" class="input-xlarge" name="taskname" placeholder="penser à..." ng-model="newTodo.task" ng-minlength="4" />
+        <span class="alert error" ng-show="taskform.$dirty && taskform.taskname.$error.minlength" >la tâche doit faire plus de 4 caractères</span>
+    </form>

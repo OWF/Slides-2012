@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AngularJS</title>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        <link href='lib/syntaxhighlighter/shThemeEclipse.css' rel='stylesheet' type='text/css'>
+        <script src='lib/jquery-1.8.2.min.js'></script>
+        <script src='lib/angular-1.1.0.min.js'></script>
+        <script src='lib/syntaxhighlighter/shCore.js'></script>
+        <script src='lib/syntaxhighlighter/shBrushJScript.js'></script>
+        <script src='lib/syntaxhighlighter/shBrushXml.js'></script>
+        <script src='lib/syntaxhighlighter/shBrushCoffeeScript.js'></script>
+        <script src='presentation.js'></script>
+        <script>
+			//<![CDATA[
+			SyntaxHighlighter.all();
+			//]]>
+        </script>
+        <style>
+            h2 {
+                margin-bottom:30px !important;
+            }
+        </style>
+    </head>
+    <body ng-app='PresentationModule' ng-controller='PresentationController'>
+        <div id='intro'>
+            <h1>
+            AngularJS
+            <br/>
+            </h1>
+            <h2>Ludovic Pierrat</h2>
+            <h3>lpierrat@wacompany.com</h3>
+        </div>
+        <p id='counter' ng-show='isInsideDeck()'>
+            <a href='#/slides/1'>«</a>
+            {{activeSlide + 1}} / {{totalSlides}}
+            <a href='#/slides/((totalSlides))'>»</a>
+        </p>
+        <deck current='activeSlide' total='totalSlides'>
+            <slide>
+                <h2>AngularJS, c'est quoi ?</h2>
+                <ul>
+                    <li>
+                        un framework Javascript pour construire des web apps
+                    </li>
+                    <li>
+                        un MVC exécuté dans le browser
+                     </li>
+                    <li>
+                        du data-binding automatique entre le modèle et la vue
+                    </li>
+                    <li>
+                        de l'injection de dépencence
+                     </li>
+                    <li>
+                        des tests unitaires et end-to-end
+                     </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>AngularJS, en faits</h2>
+                <ul>
+                    <li>
+                        développé chez Google
+                    </li>
+                    <li>
+                        créé en 2009
+                    </li>
+                    <li>
+                        open source (MIT)
+                    </li>
+                    <li>
+                        communauté et équipe de développement actives
+                    </li>
+                    <li>
+                        DoubleClick for Advertisers développé en AngularJS (200 000 lignes de code)
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Pourquoi avoir créé AngularJS ?</h2>
+                
+                <li>besoin de simplifier la descente d'une partie de la logique applicative sur le client</li>
+                <li>de + en + de possibilités côté client :
+                    <ul style="margin-left:50px">
+                <li>rapiditité de JS</li>
+                <li>fonctionnalités</li>
+                    </ul>
+                    </li>
+            </ul>
+            </slide>
+            <slide>
+                <h2>Pourquoi utiliser AngularJS ?</h2>
+                <li>une interface utilisateur très rapide</li>
+                <li>une UI très réactive (binding)</li>
+                <li>séparation marquée présentation / données</li>
+                <li>primauté au HTML (vs Javascript) pour les vues</li>
+                <li>moins de code</li>
+                <li>modularité et extensibilité</li>
+            </slide>
+            <slide>
+                <h2>Développement Web ?</h2>
+                <li>Web 0.0 : HTML  + Scripts Serveurs</li>
+                <li>Web 1.0 : HTML  + Scripts Serveurs + un peu de Javascript</li>
+                <li>Web 2.0 : HTML  + Scripts Serveurs + Ajax + librairies JS</li>
+            </slide>
+            <slide>
+                <h2>Développement Web ?</h2>
+                <h3>le changement, c'est maintenant :</h3>
+                <ul>
+                <li>HTML 5 + MVC pour la navigation et la présentation
+                </li>
+                <li>API REST pour la persistence
+                </li>
+                <li>Scripts serveur pour certaines tâches
+                </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Data-binding AngularJS</h2>
+                <snippet highlight='html' source='example_databinding.html'></snippet>
+                <br/>
+                <iframe width="100%" src="example_databinding_working.html"></iframe>
+            </slide>
+            <slide>
+                <h2>Collections AngularJS</h2>
+                <snippet highlight='html' source='example_collections.html'></snippet>
+                <br/>
+                <iframe width="100%" src="example_collections_working.html"></iframe>
+            </slide>
+            <slide>
+                <h2>Validation AngularJS</h2>
+                <snippet highlight='html' source='example_validation.html'></snippet>
+                <br/>
+                <iframe width="100%" src="example_validation_working.html"></iframe>
+            </slide>
+            <slide>
+                <h2>Application AngularJS</h2>
+                <snippet highlight='javascript' source='example_app.js'></snippet>
+            </slide>
+            <slide>
+                <h2>Services AngularJS</h2>
+                <snippet highlight='javascript' source='example_services.js'></snippet>
+            </slide>
+            <slide>
+                <h2>Controlleurs AngularJS</h2>
+                <snippet highlight='javascript' source='example_controller.js' style="height:95%"></snippet>
+            </slide>
+            <slide>
+                <h2>Directives AngularJS</h2>
+                <snippet highlight='javascript' source='example_directive.html'></snippet>
+            </slide>
+            <slide>
+                <h2>Tests unitaires AngularJS</h2>
+                <h3>Testacular + Jasmine :</h3><br/>
+                <snippet highlight='javascript' source='example_unittest.js'></snippet>
+            </slide>
+            <slide>
+                <h2>Tests End-to-End AngularJS</h2>
+                <snippet highlight='javascript' source='example_e2e.js'></snippet>
+            </slide>
+            <slide>
+                <h2>AngularJS en action</h2>
+                <iframe style="width:100%;height:90%" src="../app/index.html"></iframe>
+            </slide>
+            <slide>
+                <h2>Process de développement</h2>
+                <ul>
+                <li>design des pages HTML statiques
+                </li>
+                <li>design du modèle, développement des contrôleurs
+                </li>
+                <li>câblage des pages
+                </li>
+                <li>design, développement et intégration des services REST
+                </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>DoucleClick for Advertisers</h2>
+                <ul>
+                <li>DFA redéveloppé en AngularJS
+                </li>
+                <li>Mix pages dynamiques / AngularJS
+                </li>
+                <li>Gestion des langues, des profils utilisateurs
+                </li>
+                <li>Gestion des profils utilisateurs
+                </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Bootstrap</h2>
+
+                <ul>
+                    <li>
+                        HTML5 + CSS3, mais pas seulement
+                    </li>
+                    <li>
+                        Un système de layout pour organiser une page
+                    </li>
+                    <li>
+                        Une librarie CSS d'habillage graphique
+                    </li>
+                    <li>
+                        une librairie de composants d'interface
+                    </li>
+                </ul>
+            </slide>
+
+            <slide>
+                <h2>Bootstrap en action</h2>
+                <iframe style="width:100%;height:95%" src="http://twitter.github.com/bootstrap/components.html"></iframe>
+            </slide>
+            <slide>
+                <h2>Bootstrap en couleur</h2>
+                <iframe style="width:100%;height:95%" src="http://bootswatch.com/amelia/"></iframe>
+            </slide>
+            <slide>
+                <h2>Bootstrap</h2>
+                <br/>
+                <br/>
+                <p style="vertical-align: center">
+                    idéal pour un prototypage rapide d'un site...
+                <p>
+                    ... mais aussi adapté à un site de production
+                </p>
+            </slide>
+            <slide>
+                <h2>Recommandations Bootstrap</h2>
+                <ul>
+                    <li>
+                        utiliser les fichiers LESS
+                    </li>
+                    <li>
+                        utiliser des thèmes  => <a href="http://www.bootswatch.com">http://www.bootswatch.com</a>
+                    </li>
+                    <li>
+                        web design : mix PSD + LESS
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Alternatives intéressantes</h2>
+                <ul>
+                    <li>
+                        Zurb Foundation
+                    </li>
+                    <li>
+                        Skeleton
+                    </li>
+                    <li>
+                        HTML Kickstart
+                    </li>
+                    <li>
+                        jQuery Mobile
+                    </li>
+                </ul>
+            </slide>
+
+            <slide>
+                <h2>Aller plus loin</h2>
+                <ul>
+                    <li>
+                        <a href="http://www.angularjs.org">http://www.angularjs.org</a><br/>
+                        <a href="http://blog.angularjs.org">http://blog.angularjs.org</a><br/>
+                    </li>
+                    <li>
+                        <a href=" http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a><br/>
+                       
+                    </li>
+                    <li>
+                        <a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml</a>
+                    </li>
+                </ul>
+            </slide>
+        </deck>
+    </body>
+</html>
+
+
+<!--
+            <slide>
+                <h2>Simplest example</h2>
+                <example name='example_simplest'></example>
+            </slide>
+            <slide>
+                <h2>Live updating</h2>
+                <example name='example_live'></example>
+            </slide>
+                <slide>
+                <h2>MVC? MVVM? Wat?</h2>
+                <ul>
+                    <li>
+                        Angular calls itself MVC but I don't buy it.
+                    </li>
+                    <li>
+                        Controllers, Directives, Services
+                    </li>
+                    <li>
+                        Plain-old-JS objects for models instead of a (potentially fat) Model layer.
+                    </li>
+                    <li>
+                        Controllers scoped to DOM
+                    </li>
+                    <li>
+                        Directives extend HTML
+                    </li>
+                    <li>
+                        Services are your batarangs. Or your bat-utility-belt. Whatever. Anyway they're useful.
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Scope</h2>
+                <ul>
+                    <li>
+                        The communication between a Controller and the DOM
+                    </li>
+                    <li>
+                        The simple example before was defining 'bro' on Angular's rootScope
+                    </li>
+                    <li>
+                        Let's define our own:
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>Controller + Scope</h2>
+                <example name='example_scope'></example>
+            </slide>
+            <slide>
+                <h2>Collections</h2>
+                <snippet highlight='html'>
+
+                </snippet>
+                <hr>
+                <snippet highlight='html' source='example_databinding.html'></snippet>
+            </slide>
+            <slide>
+                <h2>Collections</h2>
+                <example name='example_collections'></example>
+            </slide>
+            <slide>
+                <h2>Data!</h2>
+                <snippet highlight='coffeescript' source='example_data.coffee'></snippet>
+                <hr>
+                <snippet highlight='html' source='example_data_snippet.html'></snippet>
+            </slide>
+            <slide>
+                <h2>Data!</h2>
+                <example name='example_data'></example>
+            </slide>
+            <slide>
+                <h2>Objection!</h2>
+                <ul>
+                    <li>
+                        But, but, putting JS in HTML is bad!
+                    </li>
+                    <li>
+                        Oh wait, no it isn't.
+                    </li>
+                    <li>
+                        Doing this a hundred times is bad:
+                        <script class='brush: coffeescript; toolbar: false;' type='syntaxhighlighter'>
+							$('a.something').click(e) - >
+							e.preventDefault();
+							i.ma(stupid)
+                        </script>
+                    </li>
+                    <li>
+                        Ember's doing a similar thing (with handlebars extension), and hipsters love it.
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <img class='screenshot' ng-repeat="company in ['microsoft','salesforce','ebay','php']" ng-src='img/bad_{{company}}.png'>
+            </slide>
+            <slide>
+                <h2>HTML is a DSL. Make it pro.</h2>
+                <ul>
+                    <li>
+                        New tags! New attributes! New all the things!
+                    </li>
+                    <li>
+                        Defined using Directives
+                    </li>
+                    <li>
+                        Keeps the DOM out of your controllers
+                    </li>
+                    <li>
+                        Invoked how you like:
+                        <script class='brush: html; toolbar: false;' type='syntaxhighlighter'>
+                            							<my-tag is="pro">
+                            <span my-tag="pro">
+                            <span my:tag="pro">
+                            <span class="my-tag: pro;">
+                            <span data-my-tag="pro">
+                        </script>
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>AngularJS</h2>
+                <ul>
+                    <li>HTML
+                    </li>
+                    <li>
+                        Extension d'HTML
+                    </li>
+                    <li>
+                        Data-binding
+                    </li>
+                    <li>
+                        Services, Directives, Controllers, Html views
+                    </li>
+                    <li>
+                        HTML + javascript 
+                    </li>
+                </ul>
+            </slide>
+            <slide>
+                <h2>AngularJS</h2>
+                <ul>
+                    <li>un MVC dans le client
+                    </li>
+                    <li>
+                        Extension d'HTML
+                    </li>
+                    <li>
+                        Data-binding
+                    </li>
+                    <li>
+                        Services, Directives, Controllers, Html views
+                    </li>
+                    <li>
+                        
+                    </li>
+                </ul>
+            </slide>
+-->
